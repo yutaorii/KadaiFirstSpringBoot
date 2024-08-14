@@ -11,6 +11,10 @@ public class KadaiFirstController {
 
     @GetMapping("/dayofweek/{date}")
     public String getDayOfWeekFromPath(@PathVariable String date) {
+        return dispDayOfWeek(date);
+    }
+
+    public String dispDayOfWeek(String date) {
         // 日付文字列から年、月、日を抽出
         String yearStr = date.substring(0, 4);
         String monthStr = date.substring(4, 6);
@@ -32,6 +36,7 @@ public class KadaiFirstController {
 
         return dayOfWeek;
     }
+}
 
 
     @GetMapping("/plus/{num1}/{num2}")
